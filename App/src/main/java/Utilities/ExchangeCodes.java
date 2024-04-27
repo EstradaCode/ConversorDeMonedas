@@ -23,9 +23,9 @@ public class ExchangeCodes {
         }
         JsonObject jElement = new Gson().fromJson(response.body(),JsonObject.class );
         JsonArray jsonArr = jElement.getAsJsonArray("supported_codes");
-        List<Code> l = new ArrayList<Code>();
+        List<Code> l = new ArrayList<>();
         for( JsonElement j : jsonArr){
-            JsonArray codeFields = j.getAsJsonArray();
+            JsonArray codeFields = j.getAsJsonArray(); // NAME, COIN NAME , ?? NEED FOR 3RD FIELD
             l.add(new Code(codeFields.get(0).getAsString(),codeFields.get(1).getAsString()));
         }
         return l;

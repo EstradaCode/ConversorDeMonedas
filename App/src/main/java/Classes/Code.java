@@ -9,12 +9,11 @@ public class Code {
         this.coinName = coinName;
     }
 
-    public String getID() {
-        return ID;
+    public Code() {
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public String getID() {
+        return ID;
     }
 
     public String getCoinName() {
