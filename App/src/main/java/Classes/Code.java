@@ -3,10 +3,12 @@ package Classes;
 public class Code {
     private String ID;
     private String coinName;
+    private String country;
 
-    public Code(String ID, String coinName) {
+    public Code(String ID, String coinName, String country) {
         this.ID = ID;
         this.coinName = coinName;
+        this.country=country;
     }
 
     public String getID() {
@@ -23,6 +25,14 @@ public class Code {
 
     public void setCoinName(String coinName) {
         this.coinName = coinName;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     @Override
