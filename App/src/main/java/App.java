@@ -1,21 +1,21 @@
 import Classes.Code;
 import Classes.CodesData;
 import Utilities.ExchangeCodes;
+import Utilities.ExchangeRequest;
 import Utilities.List2D;
 import java.util.LinkedList;
 import java.util.List;
-
+import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
+        Scanner  in = new Scanner(System.in);
         List <Code> codigos = ExchangeCodes.RequestCodes();
         System.out.println(codigos);
         List<CodesData> llista= new LinkedList<>();
-        List2D.Sort(llista,codigos);
+        List2D.Sort(llista,codigos); // genera la lista de listas con la lista de codigos!
         System.out.println("lista de codigos \n" + llista);
-        int sizetot=0;
-        for( CodesData c : llista){
-            sizetot += c.getCodesList().size();
-        }
-        System.out.println(codigos.size() == sizetot); // lista de listas completada, sin error ni perdida de elementos
+        System.out.println("elije un codigo para mostrar sus tasas de cambio");
+        String base_Code = in.next();
+        System.out.println(ExchangeRequest.getAllCurrencies(base_Code));
     }
 }
